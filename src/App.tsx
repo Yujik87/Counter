@@ -6,18 +6,23 @@ import { Settings } from './Settings';
 function App() {
 
     let [count, setCount] = useState(0)
+    let [maxVal, setMaxVal] = useState(5)
+    let [startVal, setStartVal] = useState(0)
 
     function incBut() {
-        if (count <= 5) {
+        if (count <= maxVal) {
             setCount(++count)
         }
     }
 
     function resetBut() {
-        setCount(count = 0)
+        setCount(count = startVal)
     }
 
-    function setBut
+    function setBut() {
+        localStorage.setItem('startVal', startVal.toString())
+        localStorage.setItem('maxtVal', maxVal.toString())
+    }
 
     return (
         <div className="App">
